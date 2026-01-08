@@ -1,58 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>Google広告テスト</title>
-
-  <!-- Google AdSense 読み込み -->
-  <script async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234567890123456"
-    crossorigin="anonymous">
-  </script>
+ <script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234567890123456"
+  crossorigin="anonymous">
+</script>
+    <meta charset="UTF-8">
+  <title>Grid Repeat</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="grid" id="grid">
+  <div id="grid"><ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-1234567890123456"
+    data-ad-slot="1234567890"
+    data-ad-format="auto"
+    data-full-width-responsive="true">
+</ins></div>
+ 
+</script>
+  <script>const grid = document.getElementById("grid");
 
-  <!-- 広告表示位置 -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-1234567890123456"
-       data-ad-slot="1234567890"
-       data-ad-format="auto"
-       data-full-width-responsive="true">
-  </ins>
-</div>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-
-    const grid = document.getElementById("grid");
-
-const COUNT = 500; // ← 表示したい数
-
-for (let i = 1; i <= COUNT; i++) {
-  const item = document.createElement("div");
-  item.className = "item";
-  item.textContent = `Item ${i}`;
-  grid.appendChild(item);
-}
-
-  </script>
-<style>
-    body {
-  margin: 0;
-  padding: 20px;
-  font-family: sans-serif;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 16px;
-}
-
-
-
-</style>
+    const count = 500; // 表示数
+    
+    for (let i = 0; i < count; i++) {
+      const div = document.createElement("div");
+      div.className = "item";
+      grid.appendChild(div);
+    }
+    </script>
 </body>
 </html>
+<style>#grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+  }
+  
+  .item {
+    height: 100px;
+  }
+  </style>
